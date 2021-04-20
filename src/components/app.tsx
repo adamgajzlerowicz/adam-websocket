@@ -1,10 +1,10 @@
 import * as React from 'react';
 import useWebSocket, {ReadyState} from "react-use-websocket";
 
-import './App.css';
-import {Unready} from "./components/Unready";
-import {ApiData} from "./types";
-import {OrderbookItem} from "./components/orderbookItem";
+import './app.css';
+import {Unready} from "./Unready";
+import {ApiData} from "../types";
+import {OrderbookItem} from "./orderbookItem";
 
 const getDataMessage = {"event":"subscribe","feed":"book_ui_1","product_ids":["PI_XBTUSD"]}
 
