@@ -8,11 +8,9 @@ type Props = {
    total: number
 }
 
-export const OrderbookItem = ({price, size, total}: Props) => {
-   console.log(formatCurrency(price), price);
-   return <Row>
-      <Col>{formatCurrency(price)}</Col>
-      <Col>{formatSize(size)}</Col>
-      <Col>{formatSize(total)}</Col>
-   </Row>
-}
+export const OrderbookItem = ({price, size, total}: Props) =>
+    <Row>
+       <Col>{formatCurrency(price)}</Col>
+       <Col>{formatSize(size)}</Col>
+       <Col>{formatSize(total)}</Col>
+    </Row>
