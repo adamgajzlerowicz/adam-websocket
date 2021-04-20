@@ -1,6 +1,10 @@
+export type PriceSizeItem = [number, number]
+
+export type PriceSize = Array<PriceSizeItem>
+
 export type ApiData = {
     feed: string,
     product_id: string,
-    bids: Array<[number, number]>
-    asks: Array<[number, number]>
+    bids: PriceSize
+    asks: PriceSize
 }

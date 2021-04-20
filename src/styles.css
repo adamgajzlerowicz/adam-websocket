@@ -3,19 +3,11 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   background-color: #282c34;
   height: calc(100vh - 20px);
   color: white;
   padding-top: 20px;
-  font-size: calc(10px + 2vmin);
-  display: flex;
-  flex-direction: column;
-}
-
-.orderbook {
-  width: 100%;
+  font-size: calc(10px + 1vmin);
   display: flex;
   flex-direction: column;
 }
@@ -26,3 +18,12 @@ body {
   align-items: center;
   display: flex;
 }
+
+@media screen and (max-width: 960px) {
+  .data > div {
+    height: 50vh;
+    overflow: auto;
+  }
+}
+
+
