@@ -20,7 +20,7 @@ export const DataColumn = ({data, heading}: Props) => {
         {data.map((item, index) =>
             <OrderbookItem
                 key={index}
-                prize={item[0]}
+                price={item[0]}
                 size={item[1]}
                 total={calculateTotal(data.slice(index, data.length))}
             />)

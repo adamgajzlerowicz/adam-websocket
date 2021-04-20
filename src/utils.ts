@@ -10,6 +10,15 @@ export const parseApiData = (data: string): ApiData | null => {
 
 export const calculateTotal = (data: ApiData['bids']) => data.reduce((acc, item) => acc + item[0], 0)
 
-export const filterItemsWithNoTotal = (data: [number, number]) => {
-    return data[1] > 0
-}
+export const filterItemsWithNoTotal = (data: [number, number]) => data[1] > 0
+
+export const formatCurrency = (amount: number) => new Intl.NumberFormat('en-US', {style: 'currency',
+    currency: 'USD',
+}).format(amount);
+
+export const formatSize = (size: number) => new Intl.NumberFormat('en', {
+    style: "decimal",
+    minimumFractionDigits: 3,
+    maximumFractionDigits: 3,
+}).format(size).replace(/,/g,"");
+

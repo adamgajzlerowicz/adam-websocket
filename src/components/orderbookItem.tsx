@@ -1,16 +1,17 @@
 import React from 'react'
 import {Col, Row} from "react-grid-system";
+import {formatCurrency, formatSize} from "../utils";
 
 type Props = {
-   prize: number
+   price: number
    size: number
    total: number
 }
 
-export const OrderbookItem = ({prize, size, total}: Props) => {
+export const OrderbookItem = ({price, size, total}: Props) => {
    return <Row>
-      <Col>{prize}</Col>
-      <Col>{size}</Col>
-      <Col>{total}</Col>
+      <Col>{formatCurrency(price * 100)}</Col>
+      <Col>{formatSize(size)}</Col>
+      <Col>{formatSize(total)}</Col>
    </Row>
 }
