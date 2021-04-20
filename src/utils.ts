@@ -1,4 +1,18 @@
 import {ApiData} from "./types";
+import {ReadyState} from "react-use-websocket";
+
+export const getUnreadyMessage = (readyState: ReadyState) => {
+    if (readyState === ReadyState.CONNECTING) {
+        return 'Loading'
+    }
+
+    if (ReadyState.CLOSING === readyState) {
+        return 'Connection closing'
+    }
+
+    return 'No connection'
+
+}
 
 export const parseApiData = (data: string): ApiData | null => {
     try {
