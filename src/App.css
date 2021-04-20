@@ -1,10 +1,11 @@
-.page{
+.orderbook {
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+
 }
 
-.orderbook {
+.grid {
+  max-width: 600px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-column-gap: 50px;
