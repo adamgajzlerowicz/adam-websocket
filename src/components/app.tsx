@@ -18,6 +18,8 @@ const parseApiData = (data: string): ApiData | null => {
   }
 }
 
+const calculateTotal = (data: ApiData['bids']) => data.reduce((acc, item) => acc + item[0], 0)
+
 export const App = () => {
   const [socketUrl] = React.useState('wss://www.cryptofacilities.com/ws/v1');
   const [bids, setBids] = React.useState<ApiData['bids']>([])
@@ -53,7 +55,12 @@ export const App = () => {
           </Row>
 
             {bids.map((item, index) =>
-                <OrderbookItem key={index} prize={item[0]} size={item[1]} total={200} />)
+                <OrderbookItem
+                    key={index}
+                    prize={item[0]}
+                    size={item[1]}
+                    total={calculateTotal(bids.slice(index, bids.length))}
+                />)
             }
       </Container>
   );
