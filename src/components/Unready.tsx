@@ -1,5 +1,5 @@
 import * as React from 'react'
-import './unready.css'
+import '../styles.css'
 import {ReadyState} from "react-use-websocket";
 
 const getUnreadyMessage = (readyState: ReadyState) => {

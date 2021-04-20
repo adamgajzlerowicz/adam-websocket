@@ -1,4 +1,5 @@
 import React from 'react'
+import {Col, Row} from "react-grid-system";
 
 type Props = {
    prize: number
@@ -7,9 +8,9 @@ type Props = {
 }
 
 export const OrderbookItem = ({prize, size, total}: Props) => {
-   return <div>
-      <div>{prize}</div>
-      <div>{size}</div>
-      <div>{total}</div>
-   </div>
+   return <Row>
+      <Col>{prize}</Col>
+      <Col>{size}</Col>
+      <Col>{total}</Col>
+   </Row>
 }
