@@ -3,6 +3,7 @@
 * I would add a design system. It could be tailwind or material design
 * I would add style isolation. Currently, the global css class names are used. It would be nice to use something like styled components or jss.
 * It would be nice to see better eslint with prettier and editorconfig added.
+* I would extract the url to an env variable
 
 ### What would you have done differently if you knew this page was going to get thousands of views per second vs per week?
 From the frontend architecture perspective, I'd make sure that the bundle is hosted on a CDN and is available for all users in either case.
