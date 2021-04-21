@@ -37,7 +37,7 @@ if the token leaks, the attacker won't be able to perform sensitive operations. 
 the token does have an short expiry time.
 
 Other way that attacker could perform harmful operations would be a xss attack. The injection of a malicious script means that 
-the attacker could perform actions on behalf of a user that are based on that user's session. Xss attqack could also result in a stolen token.
+the attacker could perform actions on behalf of a user that are based on that user's session. Xss attack could also result in a stolen token.
 
 
 ### How would you improve the public API that you just used?
