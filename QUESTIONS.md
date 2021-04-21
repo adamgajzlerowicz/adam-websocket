@@ -30,7 +30,9 @@ The React component inspector is really helpful narrowing issues like that down.
 One of the main priorities for the website is to protect user's authorization token. If the token was to be stolen, the secondary owner can
 act on that user's behalf, performing any operations as that user. One of the ways to remedy that is to use two-factor authentication. Even
 if the token leaks, the attacker won't be able to perform sensitive operations.
-Other way that attacker could perform harmfull operation would be 
+
+Other way that attacker could perform harmful operation would be a xss attack. The injection of a malicious script means that the script
+could perform actions on behalf of a user.
 
 
 ### How would you improve the public API that you just used?
