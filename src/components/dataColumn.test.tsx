@@ -7,7 +7,6 @@ describe("DataColumn", () => {
   it("renders title", () => {
     render(<DataColumn data={[]} heading="Hello world" />);
     const titleElement = screen.getByTestId(testIds.dataColumnHeading);
-    expect(titleElement).toBeInTheDocument();
     expect(titleElement).toContainHTML("Hello world");
   });
 
@@ -18,7 +17,7 @@ describe("DataColumn", () => {
     expect(screen.getByTestId(testIds.totalHeading)).toBeInTheDocument();
   });
 
-  it.only("renders orderbook correctly", () => {
+  it("renders orderbook correctly", () => {
     const { container } = render(
       <DataColumn
         data={[

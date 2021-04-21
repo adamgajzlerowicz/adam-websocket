@@ -6,4 +6,7 @@ export const testIds = {
     priceHeading: 'price-heading',
     sizeHeading: 'size-heading',
     totalHeading: 'total-heading',
+    orderbookPrice: 'orderbook-price',
+    orderbookSize: 'orderbook-size',
+    orderbookTotal: 'orderbook-tota',
 }
