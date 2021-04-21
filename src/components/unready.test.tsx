@@ -3,7 +3,7 @@ import {render, screen} from "@testing-library/react";
 import {Unready} from "./unready";
 import {testIds} from "../constants";
 
-describe("OrderbookItem", () => {
+describe("Unready", () => {
   it("renders price correctly", () => {
     render(
         <Unready readyState={ReadyState.CONNECTING}/>
