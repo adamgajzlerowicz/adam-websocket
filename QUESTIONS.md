@@ -18,7 +18,7 @@ if (data?.asks?.length > 0) {
   setAsks(data.asks.filter(filterItemsWithNoSize))
 }
 ```
-This way I don't need to check the nullability of the data, but access deeply nested elements.
+This way I don't need to check the existence and type of the data, but access deeply nested elements.
 
 ### How would you track down a performance issue in production? Have you ever had to do this?
 From the frontend perspective, I was debugging issues, where state of the form was too high up. Due to increasing amount of inputs
@@ -27,7 +27,11 @@ I also had issues with too much data being rendered and used viewport renderers 
 The React component inspector is really helpful narrowing issues like that down.
 
 ### Can you describe common security concerns to consider for a frontend developer?
-Assuming that a website requires a login to access it.
+One of the main priorities for the website is to protect user's authorization token. If the token was to be stolen, the secondary owner can
+act on that user's behalf, performing any operations as that user. One of the ways to remedy that is to use two-factor authentication. Even
+if the token leaks, the attacker won't be able to perform sensitive operations.
+Other way that attacker could perform harmfull operation would be 
+
 
 ### How would you improve the public API that you just used?
 It feels that the endpoint is highly specialized. I would be curious to see how similar or different
@@ -35,6 +39,6 @@ it is to the other endpoints and ensure they share similar response structure.
 
 Currently, the logic is partly dispersed between the backend and the frontend, so
 I would consider returning the "total" value from the backend.
-This will mean that more processing power is required on the backend, but I don't think it should be an issue.
-This will also mean that the api is the only source of truth and if logic changes are required, 
+This will mean that more processing power is required on the backend rather than on the client's browser.
+This will also mean that the api is the only source of truth and, if logic changes are required 
 only the backend needs to change.
