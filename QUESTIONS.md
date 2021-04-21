@@ -2,7 +2,7 @@
 * It would be interesting to investigate how cypress can intercept/mock websocket calls. Doesn't have built in mechanism for that. Perhaps it would be possible to do with stubs, but it needs more investigation. That would certainly improve the testing coverage surface. 
 * I would add a design system. It could be tailwind or material design
 * I would add style isolation. Currently, the global css class names are used. It would be nice to use something like styled components or jss.
-* It would be nice to see better eslint with prettier and editorconfig added.
+* It would be nice to see better eslint, prettier, stricter typescript config and editorconfig added. The static analysis helps to catch code errors early.
 * I would extract the url to an env variable
 
 ### What would you have done differently if you knew this page was going to get thousands of views per second vs per week?
