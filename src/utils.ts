@@ -1,5 +1,6 @@
 import {ApiData} from "./types";
-import {ReadyState} from "react-use-websocket";
+import useWebSocket, {ReadyState} from "react-use-websocket";
+import {getDataMessage, serviceUrl} from "./constants";
 
 export const getUnreadyMessage = (readyState: ReadyState) => {
     if (readyState === ReadyState.CONNECTING) {
@@ -35,3 +36,16 @@ export const formatSize = (size: number) => new Intl.NumberFormat('en', {
     maximumFractionDigits: 3,
 }).format(size).replace(/,/g,"");
 
+export const useApiData = () => {
+    const {
+        sendJsonMessage,
+        lastMessage,
+        readyState,
+    } = useWebSocket(serviceUrl, { onOpen: () => {
+        sendJsonMessage(getDataMessage)
+    }});
+
+    return {
+        lastMessage, readyState
+    }
+}
