@@ -8,5 +8,6 @@ export const testIds = {
     totalHeading: 'total-heading',
     orderbookPrice: 'orderbook-price',
     orderbookSize: 'orderbook-size',
-    orderbookTotal: 'orderbook-tota',
+    orderbookTotal: 'orderbook-total',
+    unready: 'unready'
 }

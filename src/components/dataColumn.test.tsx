@@ -18,16 +18,19 @@ describe("DataColumn", () => {
   });
 
   it("renders orderbook correctly", () => {
-    const { container } = render(
+    render(
       <DataColumn
-        data={[
-          [1, 2],
-          [2, 3],
-          [3, 4],
-        ]}
+        data={[[1, 2], [2, 3], [3, 4]]}
         heading="Hello world"
       />
     );
-    expect(container.innerHTML).toMatchSnapshot();
+
+    const firstPrice = screen.getAllByTestId(testIds.orderbookPrice)[0]
+    const firstSize = screen.getAllByTestId(testIds.orderbookSize)[0]
+    const firstTotal = screen.getAllByTestId(testIds.orderbookTotal)[0]
+
+    expect(firstPrice).toContainHTML("$1.00");
+    expect(firstSize).toContainHTML("2.000");
+    expect(firstTotal).toContainHTML("9.000");
   });
 });
