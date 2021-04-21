@@ -18,7 +18,6 @@ export const DataColumn = ({data, heading}: Props) => {
             <Col data-testid={testIds.sizeHeading}>Size</Col>
             <Col data-testid={testIds.totalHeading}>Total</Col>
         </Row>
-
         {data.map((item, index) =>
             <OrderbookItem
                 key={index}
