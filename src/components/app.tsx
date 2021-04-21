@@ -21,6 +21,7 @@ export const App = () => {
     if (!data) {
       return
     }
+
     if (data?.bids?.length > 0) {
       setBids(data.bids.filter(filterItemsWithNoSize))
     }
@@ -28,8 +29,7 @@ export const App = () => {
     if (data?.asks?.length > 0) {
       setAsks(data.asks.filter(filterItemsWithNoSize))
     }
-
-  }, [setBids, lastMessage])
+  }, [lastMessage])
 
   if (readyState !== ReadyState.OPEN) {
     return <Unready readyState={readyState} />
