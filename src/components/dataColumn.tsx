@@ -3,6 +3,7 @@ import {Col, Row} from "react-grid-system";
 import {OrderbookItem} from "./orderbookItem";
 import {calculateTotal} from "../utils";
 import {PriceSize} from "../types";
+import {testIds} from "../constants";
 
 type Props = {
     data: PriceSize
@@ -11,12 +12,13 @@ type Props = {
 
 export const DataColumn = ({data, heading}: Props) => {
     return <Col xs={12} lg={6}>
-        <h3>{heading}</h3>
+        <h3 data-testid={testIds.dataColumnHeading}>{heading}</h3>
         <Row>
-            <Col>Price</Col>
-            <Col>Size</Col>
-            <Col>Total</Col>
+            <Col data-testid={testIds.priceHeading}>Price</Col>
+            <Col data-testid={testIds.sizeHeading}>Size</Col>
+            <Col data-testid={testIds.totalHeading}>Total</Col>
         </Row>
+
         {data.map((item, index) =>
             <OrderbookItem
                 key={index}
