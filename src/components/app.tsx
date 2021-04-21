@@ -4,7 +4,7 @@ import {Container, Row} from 'react-grid-system'
 
 import {Unready} from "./unready";
 import {ApiData} from "../types";
-import {parseData, filterItemsWithNoTotal} from "../utils";
+import {parseData, filterItemsWithNoSize} from "../utils";
 import {getDataMessage, serviceUrl} from "../constants";
 
 import '../styles.css';
@@ -31,11 +31,11 @@ export const App = () => {
     }
 
     if (data.bids && data?.bids?.length > 0) {
-      setBids(data.bids.filter(filterItemsWithNoTotal))
+      setBids(data.bids.filter(filterItemsWithNoSize))
     }
 
     if (data.asks && data?.asks?.length > 0) {
-      setAsks(data.asks.filter(filterItemsWithNoTotal))
+      setAsks(data.asks.filter(filterItemsWithNoSize))
     }
 
   }, [setBids, lastMessage])

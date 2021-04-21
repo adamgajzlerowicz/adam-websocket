@@ -23,7 +23,7 @@ export const parseData = (data: string): ApiData | null => {
 
 export const calculateTotal = (data: ApiData['bids']) => data.reduce((acc, item) => acc + item[1], 0)
 
-export const filterItemsWithNoTotal = (data: [number, number]) => data[1] > 0
+export const filterItemsWithNoSize = (data: [number, number]) => data[1] > 0
 
 export const formatCurrency = (amount: number) => new Intl.NumberFormat('en-US', {style: 'currency',
     currency: 'USD',
