@@ -30,3 +30,11 @@ The React component inspector is really helpful narrowing issues like that down.
 Assuming that a website requires a login to access it.
 
 ### How would you improve the public API that you just used?
+It feels that the endpoint is highly specialized. I would be curious to see how similar or different
+it is to the other endpoints and ensure they share similar response structure.
+
+Currently, the logic is partly dispersed between the backend and the frontend, so
+I would consider returning the "total" value from the backend.
+This will mean that more processing power is required on the backend, but I don't think it should be an issue.
+This will also mean that the api is the only source of truth and if logic changes are required, 
+only the backend needs to change.
