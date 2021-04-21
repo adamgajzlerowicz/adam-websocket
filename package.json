@@ -20,7 +20,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "test": "react-scripts test",
+    "test": "CI=true react-scripts test",
     "test:watch": "yarn test --watch"
   },
   "eslintConfig": {
