@@ -4,7 +4,7 @@ import {Container, Row} from 'react-grid-system'
 
 import {Unready} from "./unready";
 import {ApiData} from "../types";
-import {parseApiData, filterItemsWithNoTotal} from "../utils";
+import {parseData, filterItemsWithNoTotal} from "../utils";
 import {getDataMessage, serviceUrl} from "../constants";
 
 import '../styles.css';
@@ -24,7 +24,7 @@ export const App = () => {
     }});
 
   React.useEffect(() => {
-    const data = parseApiData(lastMessage?.data)
+    const data = parseData(lastMessage?.data)
 
     if (!data) {
       return
